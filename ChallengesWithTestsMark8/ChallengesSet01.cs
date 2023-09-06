@@ -39,12 +39,21 @@ namespace ChallengesWithTestsMark8
 
         public string GetGreeting(string nameOfPerson)
         {
-            return ("$How are you, {John}");
+
+
+            return (string.IsNullOrEmpty(nameOfPerson)) ? "Hello!" : $"Hello, {nameOfPerson}!";
+
+
+
+
         }
 
         public string GetHey()
         {
-            return ("$Hey employees, {Mark} {Brittany} ");
+            return "HEY!";
         }
+
+        
+        
     }
 }
