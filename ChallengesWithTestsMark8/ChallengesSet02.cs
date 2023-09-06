@@ -40,12 +40,26 @@ namespace ChallengesWithTestsMark8
 
         public int Sum(int[] numbers)
         {
-            return numbers.Sum();   
+            return numbers == null ? 0 : numbers.Sum();
         }
 
         public int SumEvens(int[] numbers)
         {
-          return numbers.Where(num => num % 2 == 0).Sum();
+            if (numbers == null)
+            {
+                return 0;
+            }
+
+            //refactored to foreach rather than for loop
+            int evensSum = 0;
+            foreach (int num in numbers)
+            {
+                if (num % 2 == 0)
+                {
+                    evensSum += num;
+                }
+            }
+            return evensSum;
         }
 
         public bool IsSumOdd(List<int> numbers)
